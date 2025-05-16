@@ -3,4 +3,6 @@
     Usuário: <input type="text" name="usuario" required><br>
     Senha: <input type="password" name="senha" required><br>
     <input type="submit" value="Entrar">
+    
 </form>
+<a href="cadastrar_admin.php">Cadastrar</a>
