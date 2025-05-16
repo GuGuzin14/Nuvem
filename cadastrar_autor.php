@@ -1,4 +1,4 @@
-<head><link rel="stylesheet" href="assets/style.css"></head>
+<head><link rel="stylesheet" href="style.css"></head>
 <form action="cadastrar_autor.php" method="POST" onsubmit="return validarFormulario()">
     Nome do Autor: <input type="text" name="nome" id="nome"><br>
     <input type="submit" value="Cadastrar">

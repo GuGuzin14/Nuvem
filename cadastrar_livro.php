@@ -1,4 +1,4 @@
-<head><link rel="stylesheet" href="assets/style.css"></head>
+<head><link rel="stylesheet" href="style.css"></head>
 <form action="cadastrar_livro.php" method="POST" onsubmit="return validarFormulario()">
     Título: <input type="text" name="titulo" id="titulo"><br>
     Autor:

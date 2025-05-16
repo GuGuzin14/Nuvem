@@ -1,4 +1,4 @@
-<head><link rel="stylesheet" href="assets/style.css"></head>
+<head><link rel="stylesheet" href="style.css"></head>
 <form action="validar_login.php" method="POST">
     Usuário: <input type="text" name="usuario" required><br>
     Senha: <input type="password" name="senha" required><br>

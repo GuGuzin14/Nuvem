@@ -8,7 +8,7 @@ if(!isset($_SESSION['logado'])) {
 <html>
 <head>
     <title>Cadastrar Administrador</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
