@@ -2,16 +2,27 @@
 session_start();
 include 'conexao.php';
 
-$usuario = $_POST['usuario'];
-$senha = md5($_POST['senha']);
+if($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    header('Location: login.php');
+    exit;
+}
 
-$sql = "SELECT * FROM administradores WHERE usuario='$usuario' AND senha='$senha'";
-$result = $conn->query($sql);
+$usuario = trim($_POST['usuario'] ?? '');
+$senhaEntrada = $_POST['senha'] ?? '';
+$senhaHash = md5($senhaEntrada);
 
-if ($result->num_rows > 0) {
+// Prepared statement para evitar SQL Injection
+$stmt = $conn->prepare('SELECT id FROM administradores WHERE usuario = ? AND senha = ? LIMIT 1');
+$stmt->bind_param('ss', $usuario, $senhaHash);
+$stmt->execute();
+$stmt->store_result();
+
+if($stmt->num_rows > 0) {
     $_SESSION['logado'] = true;
-    header("Location: painel.php");
+    header('Location: painel.php');
+    exit;
 } else {
-    echo "Usuário ou senha inválidos.";
+    header('Location: login.php?erro=1');
+    exit;
 }
 ?>
